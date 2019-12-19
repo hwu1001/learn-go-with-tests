@@ -96,6 +96,9 @@ func TestSearch(t *testing.T) {
 func assertError(t *testing.T, got, want error) {
 	t.Helper()
 
+	// TODO - This section is wrong in the book, it includes the below which will fail your
+	// tests.
+	// This section: https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps#refactor-1
 	// if got == nil {
 	// 	t.Fatal("expected to get an error.")
 	// }
