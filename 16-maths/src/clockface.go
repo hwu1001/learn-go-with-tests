@@ -14,6 +14,13 @@ type Point struct {
 }
 
 const (
+	// secondsInHalfClock = 30
+	// secondsInClock     = 2 * secondsInHalfClock
+	// minutesInHalfClock = 30
+	// minutesInClock     = 2 * minutesInHalfClock
+	// hoursInHalfClock   = 6
+	// hoursInClock       = 2 * hoursInHalfClock
+
 	hourHandLength   = 50
 	minuteHandLength = 80
 	secondHandLength = 90
