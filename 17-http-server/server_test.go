@@ -8,7 +8,7 @@ import (
 )
 
 func TestGETPlayers(t *testing.T) {
-	store := StubPlayerScore{
+	store := StubPlayerStore{
 		map[string]int{
 			"Pepper": 20,
 			"Floyd":  10,
@@ -48,7 +48,7 @@ func TestGETPlayers(t *testing.T) {
 }
 
 func TestStoreWins(t *testing.T) {
-	store := StubPlayerScore{
+	store := StubPlayerStore{
 		map[string]int{},
 		nil,
 	}
@@ -115,16 +115,16 @@ func TestRecordingWinsAndRetrievingThem(t *testing.T) {
 	assertResponseBody(t, response.Body.String(), "3")
 }
 
-type StubPlayerScore struct {
+type StubPlayerStore struct {
 	scores   map[string]int
 	winCalls []string
 }
 
-func (s *StubPlayerScore) GetPlayerScore(name string) int {
+func (s *StubPlayerStore) GetPlayerScore(name string) int {
 	score := s.scores[name]
 	return score
 }
 
-func (s *StubPlayerScore) RecordWin(name string) {
+func (s *StubPlayerStore) RecordWin(name string) {
 	s.winCalls = append(s.winCalls, name)
 }
